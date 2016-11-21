@@ -1,5 +1,6 @@
 FROM node:7
 MAINTAINER Anders Hansson <anders@programlabbet.se>
+RUN apt-get update -y && apt-get install -y rsync && apt-get clean -y
 RUN npm install -g yarn
 RUN yarn global add elm@0.17.1
 RUN mkdir -p /app /app-sync
