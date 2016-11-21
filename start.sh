@@ -1,8 +1,17 @@
 #!/bin/bash
-# @Author: Anders Hansson
-# @Date:   2016-11-20 02:35:34
-# @Last Modified by:   Anders Hansson
-# @Last Modified time: 2016-11-20 02:36:44
+#
+# Maintainer: Anders Hansson <anders@programlabbet.se>
+#
+# (C)Copyright Programlabbet AB, 2016. All rights reserved.
 
+# Initial application sync
+/sync.sh false
+
+# Install Elm and Node dependencies
 yarn install
+
+# Start synchronizing the application in the background
+/sync.sh true &
+
+# Start Brunch web server
 yarn start
